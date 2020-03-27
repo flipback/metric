@@ -25,7 +25,6 @@ find_package(Boost REQUIRED)
 
 SET(BLA_STATIC ON)
 find_package(LAPACK)
-find_package(LAPACK)
 if(NOT LAPACK_FOUND)
 	set(BLA_VENDOR Intel10_64lp_seq)
 	message("Generic LAPACK not Found, trying Intel MKL")
@@ -35,6 +34,9 @@ if(NOT LAPACK_FOUND)
 	     endif()
 	endif()
 	find_package(LAPACK QUIET)
+	if(NOT LAPACK_FOUND)
+	    SET(BLAS_ROOT "C:/opt/lib/"
+	endif()
 endif()
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
