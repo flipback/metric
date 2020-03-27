@@ -1,7 +1,22 @@
 cmake_minimum_required(VERSION 3.10)
-set(CMAKE_VERBOSE_MAKEFILE ON)
-cmake_policy(SET CMP0074 NEW)
+if (POLICY CMP0025)
+  cmake_policy(SET CMP0025 NEW)
+endif ()
+if (POLICY CMP0074)
+    cmake_policy(SET CMP0074 NEW)
+endif()
 
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+if(CMAKE_SYSTEM_NAME MATCHES Windows)
+    if(CMAKE_SYSTEM_PROCESSOR MATCHES ".*64$")
+        message("Build architecture: x64")
+        set(CMAKE_GENERATOR_PLATFORM x64)
+    else()
+        message("Build architecture: x86")
+        set(CMAKE_GENERATOR_PLATFORM Win32)
+    endif()
+endif()
 
 #set(CMAKE_BUILD_TYPE Debug)
 
