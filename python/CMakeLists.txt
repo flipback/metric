@@ -35,7 +35,7 @@ if(NOT LAPACK_FOUND)
 	endif()
 	find_package(LAPACK QUIET)
 	if(NOT LAPACK_FOUND)
-	    SET(BLAS_ROOT "C:/opt/lib/"
+	    SET(BLAS_ROOT "C:/opt/lib/")
 	endif()
 endif()
 
