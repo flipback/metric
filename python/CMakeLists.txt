@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 set(CMAKE_VERBOSE_MAKEFILE ON)
+cmake_policy(SET CMP0074 NEW)
+
 
 #set(CMAKE_BUILD_TYPE Debug)
 
