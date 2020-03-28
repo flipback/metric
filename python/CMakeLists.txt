@@ -37,7 +37,7 @@ endif()
 
 find_package(Python3 COMPONENTS Interpreter Development)
 
-set(Boost_DEBUG on)
+# set(Boost_DEBUG on)
 find_package(Boost REQUIRED)
 
 SET(BLA_STATIC ON)
